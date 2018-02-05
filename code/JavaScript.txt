@@ -1,0 +1,451 @@
+
+null var :-
+
+var a;
+alert(a);
+
+
+Undefind var :-
+var myVar;
+
+if (myVar)
+    alert("myVar evaluates to true");
+else
+    alert("myVar evaluates to false");
+
+====================================================================================================
+
+document.getElementByClassName("myLI").innerHTML;
+document.getElementByTagName("myLI")[0].innerHTML;
+document.getElementById("myLI").innerHTML;
+document.getElementByName("myLI").innerHTML;
+
+document.getElementById("myLI").innerHTML;
+document.getElementById("myLI").innerText;
+document.getElementById("myLI").onclick;
+document.getElementById("myLI").parentElement.nodeName;
+
+(event.target.type) // get all the Attributes .value.id.class.etc
+
+
+====================================================================================================
+
+Console.log() :- 
+<script>
+      	var a=10;
+      console.log(a);
+      console.log(100+200);
+      console.warn("yes");
+      console.error("f");
+      console.log("%cIshwar","color:green");
+      console.log("%cPatil","color:black;background-color:red");
+      
+	</script>	
+
+
+====================================================================================================
+
+Confirm Messagebox :-
+<body>
+	<h1>Demo: confirm()</h1>
+	<p id="msg"></p>
+	
+	<script>
+		 var userPreference;
+
+		if (confirm("Do you want to save changes?") == true) {
+			userPreference = "Data saved successfully!";
+		} else {
+			userPreference = "Save Canceled!";
+		}
+
+		document.getElementById("msg").innerHTML = userPreference; 
+
+    </script>
+</body>
+
+
+====================================================================================================
+
+Prompt Messagebox :-
+<body>
+	<h1>Demo: prompt()</h1>
+	<p id="msg"></p>
+	
+	<script>
+		var tenure = prompt("Please enter preferred tenure in years", "15");
+    
+		document.getElementById("msg").innerHTML = "You have entered " + tenure + " years";
+    </script>
+</body>
+
+
+====================================================================================================
+
+Number object :-
+<script>
+		var num1 = new Number(100);
+		var num2 = new Number(100);
+		var num3 = 100;
+
+		document.getElementById("p1").innerHTML = num1 == num2;
+		document.getElementById("p2").innerHTML = num1 == num3; 
+		document.getElementById("p3").innerHTML = num1 === num3;
+		document.getElementById("p4").innerHTML = typeof(num1); // object
+		document.getElementById("p5").innerHTML = typeof(num3); // number
+    </script>
+
+
+====================================================================================================
+
+Object create :- 
+<script>
+		var person = { 
+                firstName: "James", 
+                lastName: "Bond", 
+                age: 25, 
+                getFullName: function () { 
+                    return this.firstName + ' ' + this.lastName 
+                    } 
+            };
+
+		document.getElementById("p1").innerHTML = person.firstName; 
+		document.getElementById("p2").innerHTML = person.lastName; 
+
+		document.getElementById("p3").innerHTML = person["firstName"];
+		document.getElementById("p4").innerHTML = person["lastName"];
+
+		document.getElementById("p5").innerHTML = person.getFullName();
+
+    </script>
+
+
+====================================================================================================
+
+Object Constructor :- 
+<script>
+		var person = new Object();
+
+		// Attach properties and methods to person object     
+		person.firstName = "James";
+		person["lastName"] = "Bond"; 
+		person.age = 25;
+		person.getFullName = function () {
+				return this.firstName + ' ' + this.lastName;
+			};
+
+		// access properties & methods 
+		document.getElementById("p1").innerHTML = person.firstName; 
+		document.getElementById("p2").innerHTML = person.lastName; 
+
+		document.getElementById("p3").innerHTML = person["firstName"];
+		document.getElementById("p4").innerHTML = person["lastName"];
+
+		document.getElementById("p5").innerHTML = person.getFullName();
+
+    </script>
+
+
+====================================================================================================
+
+Access Object keys :-
+<script>
+		var person = new Object();
+    
+		person.firstName = "James";
+		person["lastName"] = "Bond";
+		person.age = 25;
+		person.getFullName = function () {
+				return this.firstName + ' ' + this.lastName;
+			};
+
+		var i = 0;
+		for(var key in person){
+				document.getElementById("p" + i++).innerHTML = key;
+			};
+
+    </script>
+
+
+====================================================================================================
+
+Array constructor syntax :- 
+var stringArray = new Array();
+stringArray[0] = "one";
+stringArray[1] = "two";
+stringArray[2] = "three";
+stringArray[3] = "four";
+
+var numericArray = new Array(3);
+numericArray[0] = 1;
+numericArray[1] = 2;
+numericArray[2] = 3;
+
+var mixedArray = new Array(1, "two", 3, "four");
+
+
+====================================================================================================
+
+Pass by reference :- 
+<script>
+		function changeFirstName(per)
+		{
+			per.firstName = "Steve";
+			return per.firstName;
+		}
+
+		var person = { firstName : "Bill" };
+		
+		document.getElementById("p1").innerHTML = person.firstName; 
+
+		changeFirstName(person)    
+
+		document.getElementById("p2").innerHTML = person.firstName; 
+		
+    </script>
+
+
+====================================================================================================
+
+Nested objects :- 
+<script>
+		var person = {
+			firstName: "James",
+			lastName: "Bond",
+			age: 25,
+			address: {
+				id: 1,
+				country:"UK"
+			}
+		};
+
+		document.getElementById("p1").innerHTML = person.address.country; 
+		
+    </script>
+
+
+====================================================================================================
+
+ Function parameters :-
+function ShowMessage(firstName, lastName) {
+    alert("Hello " + firstName + " " + lastName);
+}
+
+ShowMessage("Steve", "Jobs", "Mr."); // display Hello Steve Jobs
+ShowMessage("Bill"); // display Hello Bill undefined
+ShowMessage(); // display Hello undefined undefined
+
+ arguments Object:
+function ShowMessage(firstName, lastName) {
+    alert("Hello " + arguments[0] + " " + arguments[1]);
+}
+
+ShowMessage("Steve", "Jobs"); 
+
+ShowMessage("Bill", "Gates");
+
+ShowMessage(100, 200);
+
+
+====================================================================================================
+
+Object Represent parameter in current function :-
+<body>
+	<h1>Demo: JavaScript arguments object</h1>
+	
+	<script>
+		function ShowMessage() {
+
+			for(var i = 0; i < arguments.length; i++){
+				alert(arguments[i]);
+			}
+		}
+
+		ShowMessage("Steve", "Jobs"); 
+    </script>
+</body>
+
+ShowMessage("Steve", "Jobs"); 
+
+
+====================================================================================================
+
+Function returning a function :-
+<script>
+		function multiple(x) {
+
+			function fn(y)
+			{
+				return x * y;
+			}
+    
+			return fn;
+		}
+
+		var triple = multiple(3);
+
+		document.getElementById("p1").innerHTML = triple(2); 6
+		document.getElementById("p2").innerHTML = triple(3); 9
+    </script>
+
+
+Function Expression:
+var add = function sum(val1, val2) {
+    return val1 + val2;
+};
+
+var result1 = add(10,20);
+var result2 = sum(10,20); // not valid
+
+Anonymous Function:
+var showMessage = function (){
+    alert("Hello World!");
+};
+
+showMessage();
+
+var sayHello = function (firstName) {
+    alert("Hello " + firstName);
+};
+
+showMessage();
+
+sayHello("Bill");
+
+
+Nested Function:
+function ShowMessage(firstName)
+{
+    function SayHello() {
+        alert("Hello " + firstName);
+    }
+
+    return SayHello();
+}
+
+ShowMessage("Steve");
+
+====================================================================================================
+
+Switch Case :-
+<body>
+	<h1>Demo: combined switch cases</h1>
+	
+	<script>
+		var a = 2;
+
+		switch (a) {
+			case 1:                  //  not break here so continue case  1,2,3 until not come break statements
+			case 2:
+			case 3:
+				alert("case 1, 2, 3 executed");
+				break;
+			case 4:
+				alert("case 4 executed");
+				break;
+			default:
+				alert("default case executed");
+		}
+    </script>
+</body>
+
+
+====================================================================================================
+
+Loops Print One-by-one In Paragraph :- 
+<body>
+	<h1>Demo: for loop</h1>
+	<p id="p0"></p>
+	<p id="p1"></p>
+	<p id="p2"></p>
+	<p id="p3"></p>
+	<p id="p4"></p>
+	
+	<script>
+		//var arr = [10, 11, 12, 13, 14];
+		for (var i = 0; i < 5; i++)
+		{
+			document.getElementById("p" + i).innerHTML = i;arr[i];
+		}
+    </script>
+</body>
+
+
+====================================================================================================
+
+Global variable :-
+<script>
+
+    function createUserName() {
+        userName = "Bill";
+    }
+
+    function modifyUserName() {
+        if(userName)
+            userName = "Steve";
+    };
+
+    function showUserName() {
+        alert(userName);  
+    }
+    
+    createUserName();
+    showUserName(); // Bill 
+
+    modifyUserName();
+    showUserName(); // Steve 
+
+    
+</script>
+
+
+====================================================================================================
+
+Local Variable :-
+<html>
+<body>
+	<h1>Demo: Global scope</h1>
+	<p id="error"></p>
+
+	<script>
+		function createUserName() {
+			userName = "Bill";
+		}
+
+		function showUserName() {
+			try{
+				alert(userName);
+			}
+			catch(ex)
+			{
+				document.getElementById("error").innerHTML = ex;
+			}
+		}
+
+		createUserName();
+		showUserName(); // throws error: userName is not defined
+
+	</script>
+</body>
+</html>
+
+
+====================================================================================================
+
+ No block level scope :-
+<script>
+		function NoBlockLevelScope()
+		{
+    
+			if (1 > 0)
+			{
+				var myVar = 100;
+
+			}
+
+			alert(myVar);
+		}
+
+		NoBlockLevelScope();
+
+    </script>

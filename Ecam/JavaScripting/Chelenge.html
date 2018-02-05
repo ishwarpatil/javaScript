@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Complete JavaScript Course</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+<div id="output">Complete JavaScript Course </div>
+<input type="text" id="number">
+<button id="s1" onclick="add(this)">Click Here...</button>
+<script>
+
+    var sum=0;
+    let add = (value) =>
+    {
+
+            var a1 = [];
+            var b1 = [];
+            var num=document.getElementById("number").value;
+
+            var a = num.split("").sort();
+            var b = num.split("").sort().reverse();
+
+            for(var i=0;i<a.length;i++)
+            {
+                a1.push(a[i]);
+            }
+
+            for(var i=0;i<b.length;i++)
+            {
+                b1.push(b[i]);
+            }
+
+            var v1=a1.join("");
+            var v2=b1.join("");
+
+            console.log(v1);
+            console.log(v2);
+
+            sum=v2-v1;
+            console.log(sum);
+
+            while(sum < num)
+            {
+                var a1 = [];
+                var b1 = [];
+
+                var z = String(sum);
+                var s1 = z.split("").sort();
+                var s2 = z.split("").sort().reverse();
+
+                for(var i=0;i<s1.length;i++)
+                {
+                    a1.push(s1[i]);
+                }
+
+                for(var i=0;i<s2.length;i++)
+                {
+                    b1.push(s2[i]);
+                }
+
+                var v1=a1.join("");
+                var v2=b1.join("");
+
+
+                console.log(v2);
+                console.log(v1);
+
+                sum=Number(v2)-Number(v1);
+                console.log(sum);
+
+            }
+
+    }
+
+</script>
+</body>
+
+</html>

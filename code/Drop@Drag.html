@@ -1,0 +1,53 @@
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+
+    <style>
+
+        .box
+        {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div id="wrapper">Javascript</div>
+<div class="box" ondrop="Drop()" ondragover="Dm()" ><div id="txt" ondragstart="Drag()" draggable="true"><h3>I'm Ishwar</h3></div></div>
+<div class="box" ondrop="Drop()" ondragover="Dm()" ></div>
+<div class="box" ondrop="Drop()" ondragover="Dm()" ></div>
+
+<script>
+
+    var hold;
+    function Drag()
+    {
+        document.getElementById("wrapper").innerHTML = "Drag It...";
+        h = event.target;
+    }
+
+    function Dm()
+    {
+        event.preventDefault();
+    }
+
+    function Drop()
+    {
+
+        document.getElementById("wrapper").innerHTML = "Drop It...";
+        event.preventDefault();
+        if(event.target.className == "box")
+        {
+            event.target.appendChild(h);
+        }
+    }
+
+</script>
+
+</body>

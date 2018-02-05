@@ -1,0 +1,36 @@
+<html>
+
+<head>
+</head>
+
+<body>
+
+<div class="demo">Text1</div>
+<div class="demo1" id="demo1">Text2</div>
+<div class="demo">Text3</div>
+<div class="demo2">Text4</div>
+<div class="demo">Text5</div>
+<div class="demo3">Text6</div>
+
+
+<script>
+
+        var cols=["red","blue","green","yellow","pink","purple"];
+        var r=Math.floor(Math.random()*cols.length);
+
+        document.getElementById("demo1").style.backgroundColor = "red";
+
+
+        var q = document.querySelectorAll(".demo");
+        //var q = document.querySelector(".demo");
+
+        for(var i=0;i<q.length;i++)
+        {
+            q[i].style.backgroundColor = cols[r];
+        }
+
+</script>
+
+</body>
+
+</html>

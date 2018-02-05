@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css" ?>
+<students>
+	<student>
+		<name>Dipesh</name>
+		<degree>Mca</degree>
+		<marks>85</marks>
+		<sub>5</sub>
+	</student>
+	<student>
+		<name>Ishwar</name>
+		<degree>Mca</degree>
+		<marks>80</marks>
+		<sub>3</sub>
+	</student>
+	<student>
+		<name>Abhinav</name>
+		<degree>Mca</degree>
+		<marks>75</marks>
+		<sub>6</sub>
+	</student>
+	<student>
+		<name>Shubham</name>
+		<degree>Mca</degree>
+		<marks>90</marks>
+		<sub>2</sub>
+	</student>
+	<student>
+		<name>Nehal</name>
+		<degree>Mca</degree>
+		<marks>73</marks>
+		<sub>8</sub>
+	</student>
+</students>

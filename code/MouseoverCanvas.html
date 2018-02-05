@@ -1,0 +1,49 @@
+<html>
+
+<head>
+</head>
+
+<body>
+
+
+<canvas id="can1" style="border: 1px solid black" width="400" height="400"></canvas>
+<canvas id="can2" style="border: 1px solid black" width="400" height="400"></canvas>
+<canvas id="can3" style="border: 1px solid black" width="400" height="400"></canvas>
+<img id="id" src="Images/img1.png">
+
+<script>
+
+    var can=document.querySelectorAll("canvas");
+
+    for(var i=0;i<can.length;i++)
+    {
+        can[i].addEventListener('mouseover',function(){
+
+            document.getElementById("id").src = event.target.toDataURL();
+        })
+    }
+
+    var canvas1=document.getElementById("can1");
+    var d1 = canvas1.getContext("2d");
+    d1.fillRect(5,5,150,200);
+    d1.fillStyle = 'red';
+
+    var canvas2=document.getElementById("can2");
+    var d2 = canvas2.getContext("2d");
+    d2.arc(60,60,50,0,2*Math.PI);
+    d2.stroke();
+    d2.fillStyle = 'blue';
+    d2.fill();
+
+    var canvas3=document.getElementById("can3");
+    var d3 = canvas3.getContext("2d");
+    var img = document.getElementById("id");
+    d3.drawImage(img,10,100);
+    d3.drawImage(canvas1,10,100);
+    d3.drawImage(canvas2,10,100);
+
+</script>
+
+</body>
+
+</html>

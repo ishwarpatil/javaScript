@@ -1,0 +1,46 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+<table id="tbl">
+
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Degree</th>
+			<th>Marks</th>
+		</tr>
+	</thead>
+
+	<tbody id="d">
+	</tbody>
+
+	<tfoot>
+		<tr>
+			<th>Name</th>
+			<th>Degree</th>
+			<th>Marks</th>
+		</tr>
+	</tfoot>
+
+</table>
+<script type="text/javascript">
+
+		//$.getJSON
+		$.get("studData.json",function(data)
+		{
+			$.each(data.students.student,function(k,v)
+			{
+
+				var name = v.name;
+				var de = v.degree;
+				var m = v.marks;
+				document.getElementById("d").innerHTML  +='<tr><td>' + name + '</td><td>' + de +'</td><td>' + m +'</td></tr>';
+			})
+
+		})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+
+<html>
+
+<head>
+</head>
+
+<body>
+    
+   <script>
+    
+            var a = [1,2,3,4,5,6,7,6,9,4,6,3];
+
+            var html = '<table cellpadding="10" border="2">';
+
+            for(var i=0 ;i<a.length;i++)
+            {
+                html +='<tr><td>'+ a[i] +'</td><td>Delete</td><td>Edit</td></tr>';
+            }
+
+            html += '</table>';
+
+            document.getElementById("demo").innerHTML = html;
+
+
+	</script>
+
+	<!--
+
+		<input type="text" id="add"></input>
+		<button onclick="addfriend()">AddFriends</button>
+
+		<div id="demo"></div>
+
+		<script>
+
+		            function addfriend()
+		            {
+		                var i=0;
+		                var a = document.getElementById("add").value;
+
+		                var html = '<table cellpadding="">';
+
+		                    html +='<tr><td>'+ i +'</td><td>'+ a +'</td></tr>';
+
+		                html += '</table>';
+
+		                document.getElementById("demo").innerHTML += html;
+		            }
+
+
+		</script>
+
+
+	-->   
+
+</body>
+
+</html>

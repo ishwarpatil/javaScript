@@ -1,0 +1,1121 @@
+<html>
+
+<head>
+
+   <style type="text/css">
+      
+      #display
+      {
+         margin-left: 30%;
+         margin-top: 5%;
+      }
+      input
+      {
+         width: 10%;
+         height: 10%;
+         border: 2px solid black;
+         font-size: 40px;
+         text-align: center;
+      }
+
+      /* Timer Css... */
+      #time{
+         background-color:#419D78;
+         color:#EFD0CA;
+         font-size:20px;
+         text-align:center;
+         width: 30%;
+         margin-left: 32%;
+      }
+
+   </style>
+
+</head>
+
+<body>
+<div style="margin-left: 34%;"><h1>Add Only 1 2 3 4 5 Numbers...</h1></div>
+<div id="time">Time left = <span id="timer"></span></div>
+<div id="display"></div>
+
+<script>
+
+   //Timer Switch....
+
+   document.getElementById('timer').innerHTML =
+       03 + ":" + 00;
+   startTimer();
+
+   function startTimer() {
+       var presentTime = document.getElementById('timer').innerHTML;
+       var timeArray = presentTime.split(/[:]+/);
+       var m = timeArray[0];
+       var s = checkSecond((timeArray[1] - 1));
+       if(s==59){m=m-1}
+       //if(m<0){alert('timer completed')}
+
+       document.getElementById('timer').innerHTML =
+           m + ":" + s;
+       setTimeout(startTimer, 1000);
+   }
+
+   function checkSecond(sec) {
+       if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+       if (sec < 0) {sec = "59"};
+       return sec;
+   }
+
+   //Logic
+
+   var html="";
+   var k=1;
+
+   for(var i=0;i<5;i++)
+   {
+         for(var j=0;j<5;j++)
+         {
+            html +='<input type="text" onKeyup="Check(this)" id = '+ k +'>';
+            k++;
+         }
+
+         html +='<br>';
+   }
+
+   document.getElementById("display").innerHTML = html;
+
+   document.getElementById(1).value = 5;
+   document.getElementById(2).value = 4;
+   document.getElementById(4).value = 1;
+   document.getElementById(5).value = 2;
+   document.getElementById(6).value = 2;
+   document.getElementById(9).value = 3;
+   document.getElementById(13).value = 2;
+   document.getElementById(15).value = 5;
+   document.getElementById(16).value = 4;
+   document.getElementById(17).value = 2;
+   document.getElementById(18).value = 1;
+   document.getElementById(21).value = 3;
+   document.getElementById(23).value = 4;
+   document.getElementById(25).value = 1;
+
+   function Check(x)
+   {
+      var c=1;
+      var r=1;
+      var z=x.id;
+      
+      if(z<6)
+      {
+          //Forward...
+         c=Number(z)+1;
+         while(c<6)
+         {
+               var d1=document.getElementById(z).value;
+               var d2=document.getElementById(c).value;
+               console.log(d1);
+               console.log(d2);
+               if(d1==d2)
+               {
+                  alert("Wrong...");
+                  document.getElementById(z).value = "";
+                  break;
+               }
+               c++;
+         }
+
+         //Backward...
+         c=Number(z)-1;
+         while(c>0)
+         {
+               var d1=document.getElementById(z).value;
+               var d2=document.getElementById(c).value;
+               console.log(d1);
+               console.log(d2);
+               if(d1==d2)
+               {
+                  alert("Wrong...");
+                  document.getElementById(z).value = "";
+                  break;
+               }
+               c--;
+         }
+
+         if(z==1)
+         {
+             //Forward...
+            r=Number(z)+5;
+            while(r<22)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            //Backward...
+            r=Number(z)-5;
+            while(r>0)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==2)
+         {
+            r=Number(z)+5;
+            while(r<23)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>1)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==3)
+         {
+            r=Number(z)+5;
+            while(r<24)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>2)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==4)
+         {
+            r=Number(z)+5;
+            while(r<25)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>3)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==5)
+         {
+            r=Number(z)+5;
+            while(r<26)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>4)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         
+      }
+      else if(z<11)
+      {
+         c=Number(z)+1;
+         while(c<11)
+         {
+               var d1=document.getElementById(z).value;
+               var d2=document.getElementById(c).value;
+               console.log(d1);
+               console.log(d2);
+               if(d1==d2)
+               {
+                  alert("Wrong...");
+                  document.getElementById(z).value = "";
+                  break;
+               }
+               c++;
+         }
+
+         c=Number(z)-1;
+         while(c>5)
+         {
+               var d1=document.getElementById(z).value;
+               var d2=document.getElementById(c).value;
+               console.log(d1);
+               console.log(d2);
+               if(d1==d2)
+               {
+                  alert("Wrong...");
+                  document.getElementById(z).value = "";
+                  break;
+               }
+               c--;
+         }
+
+         if(z==6)
+         {
+            r=Number(z)+5;
+            while(r<22)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>0)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==7)
+         {
+            r=Number(z)+5;
+            while(r<23)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>1)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==8)
+         {
+            r=Number(z)+5;
+            while(r<24)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>2)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==9)
+         {
+            r=Number(z)+5;
+            while(r<25)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>3)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==10)
+         {
+            r=Number(z)+5;
+            while(r<26)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>4)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+
+      }
+      else if(z<16)
+      {
+         c=Number(z)+1;
+         while(c<16)
+         {
+               var d1=document.getElementById(z).value;
+               var d2=document.getElementById(c).value;
+               console.log(d1);
+               console.log(d2);
+               if(d1==d2)
+               {
+                  alert("Wrong...");
+                  document.getElementById(z).value = "";
+                  break;
+               }
+               c++;
+         }
+
+         c=Number(z)-1;
+         while(c>10)
+         {
+               var d1=document.getElementById(z).value;
+               var d2=document.getElementById(c).value;
+               console.log(d1);
+               console.log(d2);
+               if(d1==d2)
+               {
+                  alert("Wrong...");
+                  document.getElementById(z).value = "";
+                  break;
+               }
+               c--;
+         }
+
+         if(z==11)
+         {
+            r=Number(z)+5;
+            while(r<22)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>0)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==12)
+         {
+            r=Number(z)+5;
+            while(r<23)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>1)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==13)
+         {
+            r=Number(z)+5;
+            while(r<24)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>2)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==14)
+         {
+            r=Number(z)+5;
+            while(r<25)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>3)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==15)
+         {
+            r=Number(z)+5;
+            while(r<26)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>4)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+
+      }
+      else if(z<21)
+      {
+         c=Number(z)+1;
+         while(c<21)
+         {
+               var d1=document.getElementById(z).value;
+               var d2=document.getElementById(c).value;
+               console.log(d1);
+               console.log(d2);
+               if(d1==d2)
+               {
+                  alert("Wrong...");
+                  document.getElementById(z).value = "";
+                  break;
+               }
+               c++;
+         }
+
+         c=Number(z)-1;
+         while(c>15)
+         {
+               var d1=document.getElementById(z).value;
+               var d2=document.getElementById(c).value;
+               console.log(d1);
+               console.log(d2);
+               if(d1==d2)
+               {
+                  alert("Wrong...");
+                  document.getElementById(z).value = "";
+                  break;
+               }
+               c--;
+         }
+
+         if(z==16)
+         {
+            r=Number(z)+5;
+            while(r<22)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>0)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==17)
+         {
+            r=Number(z)+5;
+            while(r<23)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>1)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==18)
+         {
+            r=Number(z)+5;
+            while(r<24)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>2)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==19)
+         {
+            r=Number(z)+5;
+            while(r<25)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>3)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==20)
+         {
+            r=Number(z)+5;
+            while(r<26)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>4)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         } 
+      }
+      else if(z<26)
+      {
+         c=Number(z)+1;
+         while(c<26)
+         {
+               var d1=document.getElementById(z).value;
+               var d2=document.getElementById(c).value;
+               console.log(d1);
+               console.log(d2);
+               if(d1==d2)
+               {
+                  alert("Wrong...");
+                  document.getElementById(z).value = "";
+                  break;
+               }
+               c++;
+         }
+
+         c=Number(z)-1;
+         while(c>20)
+         {
+               var d1=document.getElementById(z).value;
+               var d2=document.getElementById(c).value;
+               console.log(d1);
+               console.log(d2);
+               if(d1==d2)
+               {
+                  alert("Wrong...");
+                  document.getElementById(z).value = "";
+                  break;
+               }
+               c--;
+         }
+
+         if(z==21)
+         {
+            r=Number(z)+5;
+            while(r<22)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>0)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==22)
+         {
+            r=Number(z)+5;
+            while(r<23)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>1)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==23)
+         {
+            r=Number(z)+5;
+            while(r<24)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>2)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==24)
+         {
+            r=Number(z)+5;
+            while(r<25)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>3)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+         else if(z==25)
+         {
+            r=Number(z)+5;
+            while(r<26)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r+5;
+            }
+            r=Number(z)-5;
+            while(r>4)
+            {
+                  var d1=document.getElementById(z).value;
+                  var d2=document.getElementById(r).value;
+                  console.log(d1);
+                  console.log(d2);
+                  if(d1==d2)
+                  {
+                     alert("Wrong...");
+                     document.getElementById(z).value = "";
+                     break;
+                  }
+                  r=r-5;
+            }
+         }
+
+      }
+
+  }
+
+</script>
+
+</body>
+
+</html>

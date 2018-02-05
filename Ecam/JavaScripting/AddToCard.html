@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        span
+        {
+            margin: 20px;
+        }
+        a
+        {
+            color:blue ;
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body>
+
+
+
+    Enter Product :<input type="text" id="data1">
+    <br>
+    Enter Price :<input type="text" id="data2">
+    <br>
+    <button onclick="insert()">Add</button>&nbsp&nbsp&nbsp<input type="Reset" value="Reset">
+
+
+<br>
+<br>
+<br>
+
+<table id="mytbl" width="10%" border="1" cellpadding="10">
+
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+
+</table>
+<script type="text/javascript">
+
+
+    var arr=[];
+    function insert()
+    {
+
+        var btn1=document.createElement('input');
+        btn1.setAttribute('type','button');
+        btn1.setAttribute('value','Delete');
+        btn1.setAttribute('onclick','del(this)');
+
+        var btn2=document.createElement('input');
+        btn2.setAttribute('type','button');
+        btn2.setAttribute('value','Edit');
+        //btn2.setAttribute('onclick','del()');
+
+        var a1=document.getElementById("data1").value;
+        var a2=document.getElementById("data2").value;
+        var table=document.getElementById("mytbl");
+        var row=table.insertRow(1);
+        var column1=row.insertCell(0);
+        var column2=row.insertCell(1);
+        var column3=row.insertCell(2);
+        var column4=row.insertCell(3);
+        column1.innerHTML=a1;
+        column2.innerHTML=a2;
+        column3.appendChild(btn1);
+        column4.appendChild(btn2);
+
+        var obj=
+        {
+            Product:a1,
+            Price:a2
+        }
+
+        arr.push(obj);
+        localStorage.setData=JSON.stringify(arr);
+
+    }
+
+    function del(x)
+    {
+        var d = x.parentNode.parentNode.rowIndex;
+        var table=document.getElementById("mytbl");
+        table.deleteRow(d);
+    }
+
+
+    window.onload = function()
+    {
+        //localStorage.clear(setData);
+        if(localStorage.setData)
+        {
+            arr=JSON.parse(localStorage.setData);
+
+            for(var i in arr)
+            {
+                var btn1=document.createElement('input');
+                btn1.setAttribute('type','button');
+                btn1.setAttribute('value','Delete');
+                btn1.setAttribute('onclick','del(x)');
+
+                var btn2=document.createElement('input');
+                btn2.setAttribute('type','button');
+                btn2.setAttribute('value','Edit');
+                //btn2.setAttribute('onclick','del()');
+
+                var table=document.getElementById("mytbl");
+                var row=table.insertRow(1);
+                var column1=row.insertCell(0);
+                var column2=row.insertCell(1);
+                var column3=row.insertCell(2);
+                var column4=row.insertCell(3);
+                column1.innerHTML=arr[i].Product;
+                column2.innerHTML=arr[i].Price;
+                column3.appendChild(btn1);
+                column4.appendChild(btn2);
+
+            }
+
+            function del(x)
+            {
+                var d = x.parentNode.parentNode.rowIndex;
+                var table=document.getElementById("mytbl");
+                table.deleteRow(d);
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

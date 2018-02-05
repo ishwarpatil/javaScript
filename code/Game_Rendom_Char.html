@@ -1,0 +1,125 @@
+<html>
+<head>
+    <style>
+        .mydiv
+        {
+            height: 100px;
+            width: 100px;
+            float: left;
+            margin-left: 20px;
+            border: 5px double brown;
+        }
+        #clear
+        {
+            clear: both;
+        }
+        .btn {
+            height: 50px;
+            width: 100px;
+            background-color: red;
+            color: white;
+            border-radius: 15px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+<button class="btn" onclick="start()">Start</button>
+<h4 id="find"></h4>
+<div id="display"></div>
+</br>
+</br>
+
+<button onclick="show1()">Show Your Results</button>
+</br>
+</br>
+<h1><div id="times"></div></h1>
+</br>
+<h1><div id="fail"></div></h1>
+
+<script>
+
+    arr=["A","B","C","D","E","F"];
+    n=Math.floor(Math.random()*arr.length);
+    ids=[0,1,2,3,4,5];
+
+    cnt=0;
+    var html;
+
+    var count=0;
+    var f=0;
+
+    for(var i=0;i<arr.length;i++)
+    {
+        html +="<div id="+ids[i]+" class='mydiv'  onmouseover='show(this)' onmouseout='hidn(this)' style='text-align: center;font-size: 
+
+30px;'>Hidden</div>";
+    }
+    html +="<div id='clear'></div>";
+    document.getElementById("display").innerHTML=html;
+
+
+    function  start()
+    {
+
+        cnt=1;
+        spn=document.getElementById("find").innerHTML=arr[n];
+        spn1=document.getElementById("find").innerHTML="Fing :- "+arr[n];
+        return spn;
+
+    }
+
+        function show(z)
+        {
+            count +=1;
+            if(count<4)
+            {
+                if(cnt==1)
+                {
+                    var x = z.id;
+                    n=Math.floor(Math.random()*arr.length);
+
+                    var ans=document.getElementById(ids[x]).innerHTML=arr[n];
+
+                    if(ans.match(spn))
+                    {
+                        document.getElementById(x).style.display="none";
+                        count=0;
+                    }
+                }
+            }
+            else
+            {
+                f +=1;
+                alert("You Are 3 Times Fail...  So Aging Try...");
+                count=0;
+
+            }
+
+            return f;
+        }
+
+    function hidn(z)
+    {
+        var x = z.id;
+        document.getElementById(ids[x]).innerHTML="Hidden";
+
+    }
+
+    function show1()
+    {
+        if(f<6)
+        {
+            document.getElementById("times").innerHTML="Your Guessing Very Good...";
+        }
+        else
+        {
+            document.getElementById("times").innerHTML="Your Guessing Very Weak...";
+        }
+
+        document.getElementById("fail").innerHTML="How Much Times Fail You :- "+f;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+
+<head>
+</head>
+
+<body>
+
+<form action="#">
+    <input id="name">
+    <input id="marks">
+    <input type="button" value="Add">
+    <input type="Reset" value="Reset">
+</form>
+
+<table id="mytable" border="1" cellpadding="10">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Markes</th>
+    </tr>
+
+</table>
+
+<script>
+
+    var data = '[]';
+
+    var p= JSON.parse(data);
+
+
+    /*var html ="";
+    var i = 1;
+    p.forEach(function (v)
+    {
+
+        html +='<tr><td>'+ i +'</td><td>'+ v.name +'</td><td>'+ v.marks +'</td></tr>';
+        i++;
+
+    })
+    document.getElementById("mytable").innerHTML += html;
+*/
+    var q=document.querySelector('input[type="button"]');
+    var i = 1;
+    q.addEventListener('click',function () {
+
+        var n=document.getElementById("name").value;
+        var m=document.getElementById("marks").value;
+        var html ="";
+        p.push({
+            "name" : n,
+            "marks" : Number(m)
+        })
+
+        html +='<tr><td>'+ i +'</td><td>'+ n +'</td><td>'+ m +'</td></tr>';
+        i++;
+        document.getElementById("mytable").innerHTML += html;
+
+        /*for(j in p)
+        {
+
+            html +='<tr><td>'+ p[j].name+'</td><td>'+ p[j].marks +'</td></tr>';
+            document.getElementById("mytable").innerHTML = html;
+
+        }*/
+    })
+
+</script>
+
+</body>
+
+</html>

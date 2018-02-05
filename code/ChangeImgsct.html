@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+
+    <style>
+
+        #box
+        {
+           border: 1px solid black; 
+           width: 150px;
+           height: 150px;
+           text-align: center;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+Select Size :- <select id="s" onchange="changeSize()">
+    <option value="150">small</option>
+    <option value="350">mediam</option>
+    <option value="550">large</option>
+</select>
+</br>
+</br>
+Add Text :- <input type="text" id="t" onchange="changeText()">
+</br>
+</br>
+Color :- <input type="color" id="clr" onchange="changeColor()">
+</br>
+</br>
+<div id="box"><h1 id="data">Ishwar</h1></div>
+
+<script>
+
+    function changeText()
+    {
+        var z=document.getElementById("t").value;
+        document.getElementById("data").innerHTML=z;
+    }
+    function changeColor()
+    {
+        var z=document.getElementById("clr").value;
+       // alert(z);
+        document.getElementById("box").style.backgroundColor=z;
+    }
+    function changeSize()
+    {
+        var z=document.getElementById("s").value;
+       // alert(z);
+        document.getElementById("box").style.height=z;
+        document.getElementById("box").style.width=z;
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+<head>
+    <style>
+    </style>
+</head>
+<body>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Module</th>
+            <th>Target</th>
+            <th>SourceMap</th>
+        </tr>
+    </thead>
+
+    <tbody id="body">
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <th>Module</th>
+            <th>Targets</th>
+            <th>SourceMap</th>
+        </tr>
+    </tfoot>
+
+</table>
+
+<button class="btn" onclick="start()">Start</button>
+<script>
+
+    function start()
+    {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function()
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {
+                var data= JSON.parse(xhttp.responseText);
+                console.log(data);
+                for (var j in data)
+                {
+                    document.getElementById("body").innerHTML +='<tr><td>'+ data[j].module +'</td><td>'+ data[j].targets +'</td><td>'+ data[j].sourceMap +'</td></tr>';
+                }
+            }
+        };
+
+        xhttp.open("GET", "myjson.json", true);
+        xhttp.send(null);
+    }
+
+</script>
+
+<!--
+<script>
+    var myObj, myJSON, text, obj;
+
+    //Storing data:
+    myObj = { "name":"John", "age":31, "city":"New York" };
+
+    //Use the JavaScript function JSON.stringify() to convert it into a string.
+    myJSON = JSON.stringify(myObj);
+
+    localStorage.setItem("testJSON", myJSON);
+
+    //Retrieving data:
+    text = localStorage.getItem("testJSON");
+
+    //Use the JavaScript function JSON.parse() to convert text into a JavaScript object:
+    obj = JSON.parse(text);
+
+    document.getElementById("demo").innerHTML = obj.name;
+</script>
+-->
+
+
+
+</body>
+</html>

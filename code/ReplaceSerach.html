@@ -1,0 +1,29 @@
+<html>
+<head>
+
+</head>
+<br>
+<div id="text">This Is A JavaScript</div></br>
+Serach :- <input type="text" id="s"></br>
+Replace :- <input type="text" id="r"></br>
+<button class="btn" onclick="start()">Start</button>
+
+<script>
+
+    function  start()
+    {
+        var x=document.getElementById("text").innerHTML;
+        var s=document.getElementById("s").value;
+        var r=document.getElementById("r").value;
+        var rx=new RegExp(s,"ig");
+
+        var rp=x.replace(rx,r);
+
+        document.getElementById("text").innerHTML = rp;
+
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+	"students":{
+				  "student":[
+							{
+								"name":"Dipesh",
+								"degree":"MCA",
+								"marks":70
+							},
+							{
+								"name":"nehal",
+								"degree":"MBA",
+								"marks":50
+							},
+							{
+								"name":"nehal",
+								"degree":"MBA",
+								"marks":30
+							}
+		  	  		  		]
+	  	  		}
+}
