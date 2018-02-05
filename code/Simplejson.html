@@ -1,0 +1,121 @@
+<html>
+
+<head>
+
+    <style>
+
+        input
+        {
+            width: 5%;
+            height: 5%;
+            text-align: center;
+            font-size: 25px;
+            font-family: Bahnschrift;
+        }
+
+    </style>
+
+</head>
+
+<input type="button" onclick="start(this)" value="Slove">
+</br>
+</br>
+</br>
+<div id="display" style="margin-left: 25%;"></div>
+
+<script>
+
+    var html="";
+    var k=1;
+    window.onload = function ()
+    {
+        for(var i=0;i<9;i++)
+        {
+            for(var j=0;j<9;j++)
+            {
+                if(j==3 || j==6 || j==9)
+                {
+                    html +='<input type="text" style="border-left:3px solid black; " id='+ k +'>';
+                    k++;
+                }
+                else if(i==3 || i==6 || i==9)
+                {
+                    html +='<input type="text" style="border-top:3px solid black; " id='+ k +'>';
+                    k++;
+                }
+                else
+                {
+                    html +='<input type="text"  id='+ k +'>';
+                    k++;
+                }
+
+
+            }
+
+            html +='</br>';
+        }
+
+        document.getElementById("display").innerHTML +=html;
+
+
+        document.getElementById("2").value = 4;
+        document.getElementById("5").value = 2;
+        document.getElementById("7").value = 9;
+        document.getElementById("9").value = 6;
+        document.getElementById("11").value = 2;
+        document.getElementById("12").value = 6;
+        document.getElementById("13").value = 3;
+        document.getElementById("14").value = 8;
+        document.getElementById("17").value = 4;
+        document.getElementById("18").value = 5;
+        document.getElementById("21").value = 9;
+        document.getElementById("24").value = 6;
+        document.getElementById("26").value = 8;
+        document.getElementById("28").value = 1;
+        document.getElementById("29").value = 8;
+        document.getElementById("33").value = 3;
+        document.getElementById("37").value = 6;
+        document.getElementById("38").value = 7;
+        document.getElementById("44").value = 9;
+        document.getElementById("45").value = 3;
+        document.getElementById("53").value = 6;
+        document.getElementById("54").value = 1;
+        document.getElementById("56").value = 3;
+        document.getElementById("58").value = 5;
+        document.getElementById("59").value = 4;
+        document.getElementById("61").value = 7;
+        document.getElementById("64").value = 9;
+        document.getElementById("65").value = 5;
+        document.getElementById("68").value = 7;
+        document.getElementById("69").value = 2;
+        document.getElementById("70").value = 6;
+        document.getElementById("71").value = 3;
+        document.getElementById("73").value = 2;
+        document.getElementById("75").value = 7;
+        document.getElementById("77").value = 3;
+        document.getElementById("80").value = 1;
+    }
+
+    var x=0;
+    function start(z)
+    {
+        var arr = [1,3,4,6,8,10,15,16,19,20,22,23,25,27,30,31,32,34,35,36,39,40,40,41,42,43,46,47,48,49,50,51,52,53,55,57,60,62,63,66,67,72,74,76,78,79,81];
+        var add = [1,2,3,4,7,5,6,7,8,9];
+        var n1 = Math.floor(Math.random()*arr.length);
+        var n2 = Math.floor(Math.random()*add.length);
+
+        document.getElementById(arr[x]).value = add[n2];
+        x++;
+
+       if(x==47 )
+       {
+           alert("Done....");
+       }
+    }
+
+
+</script>
+
+</body>
+
+</html>

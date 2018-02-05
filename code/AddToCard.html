@@ -1,0 +1,90 @@
+<br>
+<head>
+    <title>Complete JavaScript Course</title>
+    <style>
+    </style>
+</head>
+<br>
+<div id="output"> </div>
+</br>
+</br>
+<div style="clear: both"></div>
+<table id="table" border="2" cellpadding="10" style="margin-top: 50px;">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Details</th>
+        <th>Cost</th>
+        <th>Quntity</th>
+    </tr>
+</table>
+</br>
+</br>
+<div id="total"></div>
+<script>
+
+
+
+   var item=[
+                {name:"samsung",details:"White",cost:21000},
+                {name:"nokia",details:"blue",cost:50000},
+       {name:"v7",details:"White",cost:21000},
+       {name:"lonovo",details:"silvar",cost:1000},
+       {name:"mi",details:"White",cost:15000},
+       {name:"motorola",details:"silvar",cost:18000}
+            ];
+
+   window.onload = function ()
+   {
+       displaylist();
+
+       var q= document.querySelectorAll(".product");
+
+       for(var i=0;i<q.length;i++)
+       {
+           q[i].onclick = function (e)
+           {
+                e.preventDefault();
+                addCard();
+           }
+       }
+
+   }
+    var c=0;
+   var sum;
+   function addCard()
+   {
+       c +=1;
+       var d = event.target.dataset;
+
+       var table=document.getElementById("table").innerHTML +='<tr><td>' + d.id +'</td><td>' + d.name +'</td><td>' + d.details +'</td><td>' + d.cost +'</td><td><input type="number" id="q"></td></tr>';
+
+       if(c==1)
+       {
+           sum = d.cost;
+       }
+       else
+       {
+           sum += "+" + d.cost;
+       }
+       
+       document.getElementById("total").innerHTML = "<h3>Total Price :- </h3>" + eval(sum);
+   }
+
+   var html="";
+   var x=1;
+   function displaylist()
+   {
+        item.forEach(function (v)
+        {
+            html +='<div calss="list" style="border: 1px solid black;width: 200px;float: left;margin-left: 20px;text-align: center;">' + v.name+ '</br><img style="border: 1px double black" src="JavaScript/Images/img1.png" height="150" width="150"></br>' + v.details +'</br>Rs.' + v.cost +'</br><a href="#" class="product" data-id="'+ x +'" data-name="'+ v.name +'" data-details="'+ v.details +'" data-cost="'+ v.cost +'">Add To Card</a></div>';
+            x++;
+
+        })
+       document.getElementById("output").innerHTML += html;
+   }
+
+
+</script>
+</body>
+</html>

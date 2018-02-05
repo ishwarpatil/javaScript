@@ -1,0 +1,110 @@
+<html>
+<head>
+    <style>
+        .mydiv
+        {
+            height: 100px;
+            width: 100px;
+            float: left;
+            margin-left: 20px;
+            border: 5px double brown;
+        }
+        #clear
+        {
+            clear: both;
+        }
+        .btn {
+            height: 50px;
+            width: 100px;
+            background-color: red;
+            color: white;
+            border-radius: 15px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<button class="btn" onclick="start()">Start</button>
+<button class="btn" onclick="start1()">Skip...</button>
+
+<h4 id="find"></h4>
+
+<div id="display"></div>
+</br>
+
+<h1><div id="fail"></div></h1>
+
+<script>
+
+    var html = "";
+    
+    cnt=0;
+    count=0;
+
+    var arr=[1,2,3,4,5,6,7,8,9,10];
+    n=Math.floor(Math.random()*arr.length);
+
+    for(var i=0;i<arr.length;i++)
+    {
+        html +="<div id="+ arr[i]+ " class='mydiv'  onclick='show(this)' style='text-align: center;font-size: 30px;'>"+ arr[i] +"</div>";
+    }
+
+    html +="<div id='clear'></div>";
+    document.getElementById("display").innerHTML +=html;    
+    
+    
+    function  start()
+    {
+
+        cnt=1;
+        spn=document.getElementById("find").innerHTML=arr[n];
+        spn1=document.getElementById("find").innerHTML="Fing :- "+arr[n];
+        return spn;
+
+    }
+
+    function  start1()
+    {
+
+        cnt=1;
+        n=Math.floor(Math.random()*arr.length);
+        spn=document.getElementById("find").innerHTML=arr[n];
+        spn1=document.getElementById("find").innerHTML="Fing :- "+arr[n];
+        return spn;
+
+    }
+
+    function show(z)
+    {
+        if(cnt==1)
+        {
+                count +=1;
+                var x = z.id;
+                if(count==1)
+                {
+                    var ans = document.getElementById("fail").innerHTML += x;
+                    t=1;
+                }
+                else
+                {
+                    var ans = document.getElementById("fail").innerHTML +="+" + x;
+                }
+                var e=eval(ans);
+                if(e == spn)
+                {
+                    var s=ans.split("+");
+                    //alert(s);
+                    for(var i=0;i<s.length;i++)
+                    {
+                        document.getElementById(s[i]).style.display="none";
+                    }
+                    count=0;
+                    document.getElementById("fail").innerHTML = "";
+                }
+        }
+    }
+
+</script>
+</body>
+</html>

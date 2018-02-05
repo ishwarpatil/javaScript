@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Complete JavaScript Course</title>
+    <style>
+    </style>
+</head>
+<body>
+<div id="output">Complete JavaScript Course </div>
+
+<script>
+
+    var a="Hello Word";
+
+    localStorage.setItem("t1",a);
+
+    if(localStorage.getItem("t1"))
+    {
+       document.getElementById("output").innerHTML = localStorage.getItem("t1");
+    }
+
+    if(localStorage.getItem("count"))
+    {
+        var c = Number(localStorage.getItem("count")) + 1;
+        localStorage.setItem("count",c);
+        document.getElementById("output").innerHTML += c;
+    }
+    else
+    {
+        localStorage.setItem("count",0);
+    }
+
+
+
+	/* JSON Stringify */
+
+/*	 var json={"Count":1,"Name":"JavaScript"};
+
+    var strjson = JSON.stringify(json);
+
+
+    if(localStorage.getItem('patil'))
+    {
+        var josn1= JSON.parse(localStorage.getItem('patil'));
+        document.getElementById("output").innerHTML = "</br>" + josn1.Count +"</br>" + josn1.Name+ "</br>";
+
+        josn1.Count = Number(josn1.Count)+1;
+
+        json={"Count":josn1.Count,"Name":"JavaScript"};
+
+        strjson = JSON.stringify(json);
+    }
+
+    localStorage.setItem('patil',strjson);
+*/
+
+</script>
+</body>
+</html>

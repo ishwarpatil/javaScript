@@ -1,0 +1,82 @@
+<html>
+
+<head>
+</head>
+
+<body>
+
+<select id="draw" onchange="canvas(this.value)">
+    <option value="Rect">Rect</option>
+    <option value="RectStroke">RectStroke</option>
+    <option value="Line">Line</option>
+    <option value="Circle">Circle</option>
+    <option value="Text">Text</option>
+</select>
+</br>
+</br>
+<canvas id="can" style="border: 1px solid black" width="800" height="1000"></canvas>
+
+<script>
+
+    function canvas(x)
+    {
+        var select=document.getElementById("draw").value;
+        var canvas=document.getElementById("can");
+        var d2 = canvas.getContext("2d");
+
+       canvas.width = 800;
+       canvas.height = 1000;
+
+        if(select == "Rect")
+        {
+            d2.fillStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16); // 'red'
+            // (left,top,width,height)
+            d2.fillRect(100,100,100,100);
+        }
+        else if(select == "RectStroke")
+        {
+            d2.lineWidth = 10;
+            d2.strokeStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16); // 'red'
+            d2.strokeRect(300,300,100,100);
+        }
+        else if(select == "Line")
+        {
+            // (position,height)
+            d2.lineWidth = 10;
+            d2.moveTo(10,200);
+            d2.lineTo(110,400);
+            d2.stroke();
+            d2.beginPath();
+		//d2.closePath();
+        }
+        else if(select == "Circle")
+        {
+            //circle (left,top,rudius,timeout-related,1-dwonside_haf-circle/2-topside_haf-circle);
+            d2.lineWidth = 10;
+            d2.strokeStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16); // 'red'
+            d2.arc(500,500,100,0,2*Math.PI);
+            d2.stroke();
+            d2.fill();
+        }
+        else if(select == "Text")
+        {
+            //Text (left,top)
+            d2.strokeStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16); // 'red'
+            d2.font = "30px Arial";
+            d2.fillText("Hello World...",100,650);
+        }
+
+    }
+
+    /*function inserttext()
+    {
+      var  name = document.getElementById("input");
+      d2.fillText(name,10,y);
+      y=y+30;
+    }*/
+
+</script>
+
+</body>
+
+</html>

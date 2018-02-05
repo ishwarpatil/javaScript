@@ -1,0 +1,63 @@
+<html>
+<head>
+    <style>
+        .mydiv
+        {
+            height: 100px;
+            width: 100px;
+            float: left;
+            margin-left: 20px;
+            border: 5px double brown;
+        }
+        #clear
+        {
+            clear: both;
+        }
+        .btn {
+            height: 50px;
+            width: 100px;
+            background-color: red;
+            color: white;
+            border-radius: 15px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="item">
+
+    <button onclick="additem()">Add_Items</button>
+
+    <ul id="ilist">
+    </ul>
+
+<script>
+
+
+    var count=0;
+    function additem()
+    {
+        var item= document.getElementById("item").value;
+
+        var html = "<li id="+ count +">"+ item + "  <span id='"+ count +"' onclick='del(this)'>Delete</span></li>";
+
+        document.getElementById("ilist").innerHTML +=html;
+
+        count++;
+    }
+
+    function del(a)
+    {
+            var id = a.id;
+            document.getElementById(id).style.display = "none";
+    }
+
+
+
+
+</script>
+
+</body>
+</html>
+

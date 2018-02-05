@@ -1,0 +1,55 @@
+	<html>
+<head>
+	<script src="jquery.js"></script>
+	<style>
+		thead
+		{
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+<table id="tbl">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Degree</th>
+			<th>Marks</th>
+			<th>Subject</th>
+		</tr>
+	</thead>
+	<tbody id="d">
+
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>Name</th>
+			<th>Degree</th>
+			<th>Marks</th>
+			<th>Subject</th>
+		</tr>
+	</tfoot>
+</table>
+
+<script type="text/javascript">
+
+    var html = "";
+    $.get("stud.xml",function(data) {
+
+        $(data).find('student').each(function () {
+
+            var nm = $(this).find('name').text();
+            var d = $(this).find('degree').text();
+            var m = $(this).find('marks').text();
+            var s = $(this).find('sub').text();
+
+            html += '<tr><td>' + nm + '</td><td>' + d + '</td><td>' + m + '</td><td>' + s + '</td></tr>';
+            document.getElementById("d").innerHTML = html;
+        })
+    })
+
+
+
+</script>
+</body>
+</html>

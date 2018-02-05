@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        fieldset
+        {
+            width: 30%;
+            float: left;
+        }
+        table
+        {
+            margin-left: 5%;
+        }
+        #final
+        {
+            margin-left: 15px;
+            margin-top: 10px; 
+            border: 2px solid black;
+            width: 30%;
+            float: left;    
+           
+        }
+        #total
+        {
+            margin-left: 15px;
+            margin-top: 10px; 
+            border: 2px solid black;
+            width: 30%;
+            float: left;
+        }
+        h3
+        {
+            margin-left: 10px;
+        }
+        .clear
+        {
+            clear: both;
+        }
+    </style>
+
+
+    <script>
+
+        function checks1()
+        {
+            p=prompt("Enter The Involve Or Not");
+            
+            if(p == 'yes' || p == 'Yes')
+            {
+                Come();
+            }
+            else
+            {
+                NotCome();
+            }
+            
+        }
+
+        function Come()
+        {
+            //add sum
+            var a1=0;
+            var b1=0;
+            var c1=0;
+            var d1=0;
+            var e1=0;
+            var a11="";
+            var b11="";
+            var c11="";
+            var d11="";
+            var e11="";
+            var maths;
+
+            //who
+            var w1=[];
+            var w2=[];
+            var w3=[];
+            var w4=[];
+            var w5=[];
+
+            var Divided;
+            var c=[];
+            var html="";
+
+            function checks()
+            {
+                var html1="";
+                var d=1;
+                var persons=document.getElementsByName("p");
+
+                for(var i=0;i<persons.length;i++)
+                {
+                    if(persons[i].checked)
+                    {
+                        html1 +=persons[i].value;
+                        c.push(persons[i].value);
+                        d++;
+                    }
+
+                }
+
+                var amount=document.getElementById("amount").value;
+                var play=document.getElementById("person").value;
+
+                maths = Math.floor(Divided=amount/d);
+
+                var cnt1=0;
+                var cnt2=0;
+                var cnt3=0;
+                var cnt4=0;
+                var cnt5=0;
+
+                for(var i=0;i<persons.length;i++)
+                {
+                    if(persons[i].checked)
+                    {
+                        if(persons[i].value == 'A')
+                        {
+                            a1 +=maths;
+                            cnt1++;
+                            w1.push(play + "=" +maths);
+                        }
+                        if(persons[i].value == 'B')
+                        {
+                            b1 +=maths;
+                            cnt2++;
+                            w2.push(play + "=" +maths);
+                        }
+                        if(persons[i].value == 'C')
+                        {
+                            c1 +=maths;
+                            cnt3++;
+                            w3.push(play + "=" +maths);
+                        }
+                        if(persons[i].value == 'D')
+                        {
+                            d1 +=maths;
+                            cnt4++;
+                            w4.push(play + "=" +maths);
+                        }
+                        if(persons[i].value == 'E')
+                        {
+                            e1 +=maths;
+                            cnt5++;
+                            w5.push(play + "=" +maths);
+                        }
+                    }
+
+                }
+
+                html ='<tr><td>'+html1+'</td><td>'+amount+'</td><td>'+play + ' :- Involve' +'</td><td>'+maths+'</td></tr>';
+
+                document.getElementById("body").innerHTML += html;
+
+                if(play == 'A' && cnt1==0)
+                {
+                    a1 = a1 + maths;
+                }
+                if(play == 'B' && cnt2==0)
+                {
+                    b1 = b1 + maths;
+                }
+                if(play == 'C' && cnt3==0)
+                {
+                    c1 = c1 + maths;
+                }
+                if(play == 'D' && cnt4==0)
+                {
+                    d1 = d1 + maths;
+                }
+                if(play == 'E' && cnt5==0)
+                {
+                    e1 = e1 + maths;
+                }
+
+                a11 = a1;
+                b11 = b1;
+                c11 = c1;
+                d11 = d1;
+                e11 = e1;
+
+                document.getElementById("a1").innerHTML = a11;
+                document.getElementById("b1").innerHTML = b11;
+                document.getElementById("c1").innerHTML = c11;
+                document.getElementById("d1").innerHTML = d11;
+                document.getElementById("e1").innerHTML = e11;
+
+                document.getElementById("s1").innerHTML = w1.toString();
+                document.getElementById("s2").innerHTML = w2.toString();
+                document.getElementById("s3").innerHTML = w3.toString();
+                document.getElementById("s4").innerHTML = w4.toString();
+                document.getElementById("s5").innerHTML = w5.toString();  
+            }
+
+            return checks();
+        }
+
+        function NotCome()
+        {
+            //add sum
+            var a1=0;
+            var b1=0;
+            var c1=0;
+            var d1=0;
+            var e1=0;
+            var a11="";
+            var b11="";
+            var c11="";
+            var d11="";
+            var e11="";
+            var maths;
+
+            //who
+            var w1=[];
+            var w2=[];
+            var w3=[];
+            var w4=[];
+            var w5=[];
+
+
+            var Divided;
+            var c=[];
+            var html="";
+
+            function checks()
+            {
+                var html1="";
+                var d=0;
+                var persons=document.getElementsByName("p");
+
+                for(var i=0;i<persons.length;i++)
+                {
+                    if(persons[i].checked)
+                    {
+                        html1 +=persons[i].value;
+                        c.push(persons[i].value);
+                        d++;
+                    }
+
+                }
+
+                var amount=document.getElementById("amount").value;
+                var play=document.getElementById("person").value;
+
+                maths = Math.floor(Divided=amount/d);
+
+                var cnt1=0;
+                var cnt2=0;
+                var cnt3=0;
+                var cnt4=0;
+                var cnt5=0;
+
+                for(var i=0;i<persons.length;i++)
+                {
+                    if(persons[i].checked)
+                    {
+                        if(persons[i].value == 'A')
+                        {
+                            a1 +=maths;
+                            cnt1++;
+                            w1.push(play + "=" +maths);
+                        }
+                        if(persons[i].value == 'B')
+                        {
+                            b1 +=maths;
+                            cnt2++;
+                            w2.push(play + "=" +maths);
+                        }
+                        if(persons[i].value == 'C')
+                        {
+                            c1 +=maths;
+                            cnt3++;
+                            w3.push(play + "=" +maths);
+                        }
+                        if(persons[i].value == 'D')
+                        {
+                            d1 +=maths;
+                            cnt4++;
+                            w4.push(play + "=" +maths);
+                        }
+                        if(persons[i].value == 'E')
+                        {
+                            e1 +=maths;
+                            cnt5++;
+                            w5.push(play + "=" +maths);
+                        }
+                    }
+
+                }
+
+                html ='<tr><td>'+html1+'</td><td>'+amount+'</td><td>'+play+ ' :- Not Involve' +'</td><td>'+maths+'</td></tr>';
+
+                document.getElementById("body").innerHTML += html;
+
+                /*if(play == 'A' && cnt1==0)
+                {
+                   a1 = a1 + maths;
+                }
+                if(play == 'B' && cnt2==0)
+                {
+                    b1 = b1 + maths;
+                }
+                if(play == 'C' && cnt3==0)
+                {
+                    c1 = c1 + maths;
+                }
+                if(play == 'D' && cnt4==0)
+                {
+                    d1 = d1 + maths;
+                }
+                if(play == 'E' && cnt5==0)
+                {
+                    e1 = e1 + maths;
+                }*/
+
+                a11 = a1;
+                b11 = b1;
+                c11 = c1;
+                d11 = d1;
+                e11 = e1;
+
+                document.getElementById("a1").innerHTML = a11;
+                document.getElementById("b1").innerHTML = b11;
+                document.getElementById("c1").innerHTML = c11;
+                document.getElementById("d1").innerHTML = d11;
+                document.getElementById("e1").innerHTML = e11;
+
+                document.getElementById("s1").innerHTML = w1.toString();
+                document.getElementById("s2").innerHTML = w2.toString();
+                document.getElementById("s3").innerHTML = w3.toString();
+                document.getElementById("s4").innerHTML = w4.toString();
+                document.getElementById("s5").innerHTML = w5.toString();
+
+            }
+
+            return checks();
+        }
+        
+
+    </script>
+
+
+</head>
+<body>
+
+<fieldset>
+    <legend align="center">Travels</legend>
+
+
+    <h3>Persons Involves :- </h3></br>
+    <input type="checkbox" name="p" id="A" value="A">A
+    <input type="checkbox" name="p" id="B" value="B">B
+    <input type="checkbox" name="p" id="C" value="C">C
+    <input type="checkbox" name="p" id="D" value="D">D
+    <input type="checkbox" name="p" id="E" value="E">E
+
+    </br></br><h3>How Much And Who Person Play Amount :- </h3></br>
+    <input type="text" id="amount" placeholder="Enter The Amount...">
+
+    <select id="person">
+        <option value="Select Person">Select Person</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+        <option value="E">E</option>
+    </select>
+
+    </br></br><input type="submit" name="sub" value="Submit" onclick="checks1()"></br>
+
+</fieldset>
+
+<div id="total">
+    <h2 align="center">Total Amount</h2>
+    <h3>A :- <span id="a1"></span> </br></h3>
+    <h3>B :- <span id="b1"></span> </br></h3>
+    <h3>C :- <span id="c1"></span> </br></h3>
+    <h3>D :- <span id="d1"></span> </br></h3>
+    <h3>E :- <span id="e1"></span> </br></h3>
+
+</div>
+
+<div id="final">
+    <h2 align="center">Give The Amount</h2>
+    <h3>A :- <span id="s1"></span> </br></h3>
+    <h3>B :- <span id="s2"></span> </br></h3>
+    <h3>C :- <span id="s3"></span> </br></h3>
+    <h3>D :- <span id="s4"></span> </br></h3>
+    <h3>E :- <span id="s5"></span> </br></h3>
+
+</div>
+
+<div class="clear"></div>
+
+</br>
+</br>
+</br>
+
+<table border="1" cellpadding="10">
+    <thead>
+    <th>Persons Involves</th>
+    <th>Amount</th>
+    <th>Which Person Play Amount</th>
+    <th>Amount Divided</th>
+    </thead>
+
+    <tbody id="body">
+    </tbody>
+
+    <tfoot>
+    <th>Persons Involves</th>
+    <th>Amount</th>
+    <th>Which Person Play Amount</th>
+    <th>Amount Divided</th>
+    </tfoot>
+</table>
+
+</body>
+</html>

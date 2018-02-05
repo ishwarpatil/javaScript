@@ -1,0 +1,40 @@
+{
+  "compilerOptions1": {
+    "module": "commonjs1",
+    "targets": "es1",
+    "sourceMap": true
+  },
+
+  "compilerOptions2": {
+    "module": "commonjs2",
+    "targets": "es2",
+    "sourceMap": true
+  },
+
+  "compilerOptions3": {
+    "module": "commonjs3",
+    "targets": "es3",
+    "sourceMap": true
+  }
+}
+
+/*[
+  {
+    "module": "commonjs1",
+    "targets": "es1",
+    "sourceMap": true
+  },
+
+  {
+    "module": "commonjs2",
+    "targets": "es2",
+    "sourceMap": true
+  },
+
+  {
+    "module": "commonjs3",
+    "targets": "es3",
+    "sourceMap": true
+  }
+]*/
+

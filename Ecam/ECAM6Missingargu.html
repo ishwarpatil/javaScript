@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<div id="display">
+</div>
+
+
+<script>
+
+   /* 
+	arguments.length // function argument length
+	arguments.callee.length  // impalement function argument length
+ 
+	function myFun(a, b, c, d, e) impalement function argument length {
+        if (arguments.length == arguments.callee.length) {
+            console.log("okay");
+        }
+        else {
+            console.log("Missing " + (arguments.callee.length - arguments.length));
+        }
+        console.log(arguments);
+        console.log(arguments.length);
+        console.log();
+    }
+    myFun(1, 2, 3);  function argument length */
+
+
+    function myFun(a,b,...c) {
+
+        for(let i=0;i<c.length;i++)
+        {
+            console.log(c[i]);
+        }
+        console.log(idontno);
+        console.log(idontno.length);
+
+    }
+    myFun(1, 2, 3, 4, 5, 6);
+
+    
+
+   /*function myFun() {
+
+       let name=arguments.callee.name;
+       for(let i=0;i<arguments.length;i++)
+       {
+           console.log(name +" = "+arguments[i]);
+       }
+
+   }
+   myFun(1, 2, 3, 4, 5, 6);
+*/
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title></title>
+	<style>
+span
+{
+	margin: 20px;
+}
+a
+{
+	color:blue ;
+	text-decoration: underline;
+}
+</style>
+
+</head>
+<body>
+
+	Enter Data :<input type="text" id="data">
+	<br>
+	<button onclick="insert()">Add</button>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<table id="mytbl" width="10%" cellpadding="10" border="1">
+
+		<tr>
+			<th>Data</th>
+			<th>Delete</th>
+		</tr>
+		
+	</table>
+
+	<script type="text/javascript">
+
+		function insert()
+		{
+
+			var button = document.createElement('input');
+	        button.setAttribute('type', 'button');
+	        button.setAttribute('value', 'Delete');
+	        button.setAttribute('onclick', 'del()');
+
+			var a=document.getElementById("data").value;
+			var table=document.getElementById("mytbl");
+			var row=table.insertRow(1);
+			var column1=row.insertCell(0);
+			var column2=row.insertCell(1);
+			column1.innerHTML=a;
+			//column2.innerHTML="<a  onclick='del()'>x</a>";
+			column2.appendChild(button);
+
+
+		}
+
+		function del()
+		{
+			var table=document.getElementById("mytbl");
+			table.deleteRow(1);
+		}
+
+		windown.onload = function()
+		{
+			local
+		}
+
+	</script>
+
+</body>
+</html>
